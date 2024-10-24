@@ -13,7 +13,7 @@ After publication, this git will be updated with:
  - guidance on how to use InflaMix
  - additional code to further facilitate direct implementation of InflaMix for research with new data sets
 
-A description of the two data inputs for this project and a description of their column values is given in the comments at the beginning of scaling_sfig3.R. 
+A description of the two data inputs for this project and a description of their column values is given in the comments at the beginning of 001_base_scaling.R. 
 
 Scripts should be run in the following order which contains code for the corresponding figures:
 
