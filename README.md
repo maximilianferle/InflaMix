@@ -18,7 +18,8 @@ A description of the two data inputs for this project and a description of their
 Scripts should be run in the following order which contains code for the corresponding figures:
 
 ## Online Calculator
-The link for the InflaMix online calculator is provided here: https://sraj17.shinyapps.io/inflamix_app/ 
+The link for the InflaMix online calculator is provided here: https://sraj17.shinyapps.io/inflamix_app/
+
 For optimal results, users enter as many of the 14 labs as are available, giving precedence to the 6 laboratory measurements from the limited panel.
 
 ## Set-up
