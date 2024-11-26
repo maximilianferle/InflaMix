@@ -179,10 +179,10 @@ oob_all1 <- allits[-1,]
 mypal <- pal_npg("nrc", alpha = 0.7)(9)[c(3,9,8)]
 
 oob_all1 %>% 
-  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "1-7 missing labs"))) %>%
+  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "<= 7 missing labs"))) %>%
   group_by(mv_min, record_id) %>% summarize(im_tau=mean(im_tau), imi_tau=mean(imi_tau)) %>%
   #filter(mv_min=="No missing") %>%
-  #filter(mv_min=="1-7 missing labs") %>%
+  #filter(mv_min=="<= 7 missing labs") %>%
   filter(mv_min=="8 missing labs (focus set)") %>%
   ggplot(aes(x=im_tau, y=imi_tau, color=mv_min, fill=mv_min)) + #, color=factor(mv_min))) + 
   xlim(0, 1)+
@@ -203,10 +203,10 @@ oob_all1 %>%
 
 
 cccpre_val <- oob_all1 %>% 
-  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "1-7 missing labs"))) %>%
+  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "<= 7 missing labs"))) %>%
   group_by(mv_min, record_id) %>% summarize(im_tau=mean(im_tau), imi_tau=mean(imi_tau)) %>%
   filter(mv_min=="8 missing labs (focus set)") %>%
-  #filter(mv_min=="1-7 missing labs") %>%
+  #filter(mv_min=="<= 7 missing labs") %>%
   #filter(mv_min=="No missing") %>%
   mutate(im_tau=im_tau)
 
@@ -218,8 +218,8 @@ dev_boxplots <- oob_all1 %>%
   mutate_at(c("imi_tau", "im_tau"), function(x) {ifelse(x>=0.5, 1, 0)}) %>%
   mutate(ccd=im_tau+imi_tau) %>% mutate(ccd=ifelse(ccd==1, 0, 1)) %>%
   group_by(z, i) %>% mutate(ccds=sum(ccd), n=n()) %>% summarize(ccd=ccds/n) %>% ungroup() %>% distinct() %>%
-  mutate(mv_min = ifelse(z==12, "8 missing labs (focus set)", ifelse(z==1, "No missing", "1-7 missing labs"))) %>%
-  mutate(mv_min=factor(mv_min, levels=c("No missing", "1-7 missing labs", "8 missing labs (focus set)"))) %>% 
+  mutate(mv_min = ifelse(z==12, "8 missing labs (focus set)", ifelse(z==1, "No missing", "<= 7 missing labs"))) %>%
+  mutate(mv_min=factor(mv_min, levels=c("No missing", "<= 7 missing labs", "8 missing labs (focus set)"))) %>% 
   ggplot(aes(x=mv_min, y=ccd, color=mv_min, fill=mv_min)) + 
   geom_boxplot(alpha=0.2) + ylab("Accuracy") + xlab("") +
   scale_color_manual(values=mypal)+
@@ -233,8 +233,8 @@ test <- oob_all1 %>%
   mutate_at(c("imi_tau", "im_tau"), function(x) {ifelse(x>=0.5, 1, 0)}) %>%
   mutate(ccd=im_tau+imi_tau) %>% mutate(ccd=ifelse(ccd==1, 0, 1)) %>%
   group_by(z, i) %>% mutate(ccds=sum(ccd), n=n()) %>% summarize(ccd=ccds/n) %>% ungroup() %>% distinct() %>%
-  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "1-7 missing labs"))) %>%
-  mutate(mv_min=factor(mv_min, levels=c("No missing", "1-7 missing labs", "8 missing labs (focus set)"))) %>%
+  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "<= 7 missing labs"))) %>%
+  mutate(mv_min=factor(mv_min, levels=c("No missing", "<= 7 missing labs", "8 missing labs (focus set)"))) %>%
   filter(mv_min=="8 missing labs (focus set)") 
 
 median(test$ccd)
@@ -399,10 +399,10 @@ oob_all1 <- allits[-1,]
 mypal <- pal_npg("nrc", alpha = 0.7)(9)[c(3,9,8)]
 
 oob_all1 %>% 
-  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "1-7 missing labs"))) %>%
+  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "<= 7 missing labs"))) %>%
   group_by(mv_min, record_id) %>% summarize(im_tau=mean(im_tau), im2_tau=mean(im2_tau)) %>%
   #filter(mv_min=="No missing") %>%
-  #filter(mv_min=="1-7 missing labs") %>%
+  #filter(mv_min=="<= 7 missing labs") %>%
   filter(mv_min=="8 missing labs (focus set)") %>%
   ggplot(aes(x=im_tau, y=im2_tau, color=mv_min, fill=mv_min)) + #, color=factor(mv_min))) + 
   xlim(0, 1)+
@@ -424,10 +424,10 @@ oob_all1 %>%
 
 
 cccpre_val <- oob_all1 %>% 
-  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "1-7 missing labs"))) %>%
+  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "<= 7 missing labs"))) %>%
   group_by(mv_min, record_id) %>% summarize(im_tau=mean(im_tau), im2_tau=mean(im2_tau)) %>%
   filter(mv_min=="8 missing labs (focus set)") %>%
-  #filter(mv_min=="1-7 missing labs") %>%
+  #filter(mv_min=="<= 7 missing labs") %>%
   #filter(mv_min=="No missing") %>%
   mutate(im_tau=im_tau)
 
@@ -439,8 +439,8 @@ oob_all1 %>%
   mutate_at(c("im2_tau", "im_tau"), function(x) {ifelse(x>=0.5, 1, 0)}) %>%
   mutate(ccd=im_tau+im2_tau) %>% mutate(ccd=ifelse(ccd==1, 0, 1)) %>%
   group_by(z, i) %>% mutate(ccds=sum(ccd), n=n()) %>% summarize(ccd=ccds/n) %>% ungroup() %>% distinct() %>%
-  mutate(mv_min = ifelse(z==12, "8 missing labs (focus set)", ifelse(z==1, "No missing", "1-7 missing labs"))) %>%
-  mutate(mv_min=factor(mv_min, levels=c("No missing", "1-7 missing labs", "8 missing labs (focus set)"))) %>% 
+  mutate(mv_min = ifelse(z==12, "8 missing labs (focus set)", ifelse(z==1, "No missing", "<= 7 missing labs"))) %>%
+  mutate(mv_min=factor(mv_min, levels=c("No missing", "<= 7 missing labs", "8 missing labs (focus set)"))) %>% 
   ggplot(aes(x=mv_min, y=ccd, color=mv_min, fill=mv_min)) + 
   geom_boxplot(alpha=0.2) + ylab("Accuracy") + xlab("") +
   scale_color_manual(values=mypal)+
@@ -450,8 +450,8 @@ test <- oob_all1 %>%
   mutate_at(c("im2_tau", "im_tau"), function(x) {ifelse(x>=0.5, 1, 0)}) %>%
   mutate(ccd=im_tau+im2_tau) %>% mutate(ccd=ifelse(ccd==1, 0, 1)) %>%
   group_by(z, i) %>% mutate(ccds=sum(ccd), n=n()) %>% summarize(ccd=ccds/n) %>% ungroup() %>% distinct() %>%
-  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "1-7 missing labs"))) %>%
-  mutate(mv_min=factor(mv_min, levels=c("No missing", "1-7 missing labs", "8 missing labs (focus set)"))) %>%
+  mutate(mv_min = ifelse(z==1, "No missing", ifelse(z==12, "8 missing labs (focus set)", "<= 7 missing labs"))) %>%
+  mutate(mv_min=factor(mv_min, levels=c("No missing", "<= 7 missing labs", "8 missing labs (focus set)"))) %>%
   filter(mv_min=="8 missing labs (focus set)") 
 
 median(test$ccd)
