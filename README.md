@@ -1,7 +1,7 @@
 ---
 title: "InflaMix"
 author: "Sandeep Raj"
-date: "2024-10-20"
+date: "2025-02-25"
 ---
 
 ## InflaMix Manuscript Code
