@@ -41,8 +41,6 @@ Scripts should be run in the following order which contains code for the corresp
 
 ### Script Descriptions
 
-The following 
-
 0. Please place Dataset 1 (deriv_cohort_d0_labs_v2_dataset1.csv) into the data folder. This was provided as source data with the paper. 
 
 Every script here should run within a minute. There are two exceptions (see steps 5 and 7)
