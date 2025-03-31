@@ -1,7 +1,7 @@
 ---
 title: "InflaMix"
 author: "Sandeep Raj"
-date: "2025-02-25"
+date: "2025-03-31"
 ---
 
 ## InflaMix
@@ -99,7 +99,7 @@ The InflaMix model features will be in the "model" directory.
 
 ## Data availability
 
-Data requests for patient-related laboratory measurements or clinical outcomes will be reviewed by the corresponding author in consultation with coauthors from Hackensack University Medical Center and Sheba Medical Center. Any data and materials that can be shared will be released via data transfer agreement. Laboratory values and their corresponding upper limits of normal for the model-derivation cohort of MSK patients are provided in the Supplementary Data (Data Set 1). With this data, the following figures can be reproduced:
+Data requests for patient-related laboratory measurements or clinical outcomes will be reviewed by the corresponding author in consultation with coauthors from Hackensack University Medical Center and Sheba Medical Center. Any data and materials that can be shared will be released via data transfer agreement. Laboratory values and their corresponding upper limits of normal for the model-derivation cohort of MSK patients are provided in the Source Data provided with the paper (Data Set 1). With this data, the following figures can be reproduced:
  - Figure 1 a-c, g
  - Extended Figure 3a-i
  - Extended Figure 5a
