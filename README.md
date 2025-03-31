@@ -14,6 +14,8 @@ The model can be applied to estimate the probability of cluster assignment even 
 
 For additional details, please email rajs@mskcc.org
 
+Terms of Use as described in the LICENSE file in this repository - please review for details. Briefly, InflaMix is intended for educational and research use only and is not yet intended for clinical use or as a medical device. 
+
 ## Online Calculator
 The link for the InflaMix online calculator is provided here: https://ssraj017.github.io/inflamix_app_prod/
 
