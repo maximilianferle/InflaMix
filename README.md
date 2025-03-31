@@ -21,6 +21,7 @@ For additional details, please email rajs@mskcc.org
 
 ## Online Calculator
 The link for the InflaMix online calculator is provided here: https://ssraj017.github.io/inflamix_app_prod/
+
 Legacy Link: https://sraj17.shinyapps.io/inflamix_app/
 
 For optimal results, users enter as many of the 14 labs as are available, giving precedence to the 6 laboratory measurements from the limited panel.
