@@ -4,18 +4,13 @@ author: "Sandeep Raj"
 date: "2025-02-25"
 ---
 
-## InflaMix Manuscript Code
+## InflaMix
 
-This github repository contains code and models that accompany the InflaMix manuscript while it is under review. 
+This github repository contains code for deriving InflaMix as described in https://www.nature.com/articles/s41591-025-03532-x 
 
-After publication, this git will be updated with:
- - a link to the paper
- - guidance on how to use InflaMix
- - additional code to further facilitate direct implementation of InflaMix for research with new data sets
+InflaMix (INFLAmmation MIXture Model) is a Gaussian mixture model trained on pre-infusion laboratory and cytokine data from patients with large B-cell lymphoma treated with CD19-CAR-T. It defines two clusters, the inflammatory and non-inflammatory clusters. The inflammatory cluster is enriched for patients with a serological signature that is consistent with systemic inflammation (e.g., elevated CRP, IL6, low albumin).
 
-A description of the two data inputs for this project and a description of their column values is given in the comments at the beginning of 001_base_scaling.R. 
-
-Scripts should be run in the following order which contains code for the corresponding figures:
+The model can be applied to estimate the probability of cluster assignment even with several missing laboratory or cytokine values. Enrichment for the inflammatory signature reproducibly stratifies risk of treatment failure in multiple non-Hodgkin lymphoma cohorts and is predictive of CD19-CAR-T treatment failure in large B-cell lymphoma beyond standard biomarkers and risk factors. 
 
 For additional details, please email rajs@mskcc.org
 
@@ -30,15 +25,19 @@ For optimal results, users enter as many of the 14 labs as are available, giving
 
 1. Download this entire directory from GitHub. Open the "InflaMix.Rproj" file in a suitable IDE like R-Studio.
 
-2. Install all required packages, either manually by reviewing required libraries at the top of every script in the "scripts/" directory, or use the "renv" package "https://rstudio.github.io/renv/articles/renv.html"
+2. Install all required packages manually by reviewing required libraries at the top of every script in the "scripts/" directory
  - Note that the "survcomp" and "ComplexHeatmap" packages require installation through BioConductor.
   - https://bioconductor.org/packages/release/bioc/html/survcomp.html
   - https://bioconductor.org/packages/release/bioc/html/ComplexHeatmap.html 
  - Download and Installation should not more than a few minutes to an hour. 
 
-3. Follow the steps below. 
+3. Follow the steps below.
 
-### 0 . Please place Dataset 1 (deriv_cohort_d0_labs_v2_dataset1.csv) into the data folder. This was provided as a supplementary material. 
+A description of the two data inputs for this project and a description of their column values is given in the comments at the beginning of 001_base_scaling.R. 
+
+Scripts should be run in the following order which contains code for the corresponding figures:
+
+### 0 . Please place Dataset 1 (deriv_cohort_d0_labs_v2_dataset1.csv) into the data folder. This was provided as source data with the paper. 
 
 Every script here should run within a minute. There are two exceptions (see steps 5 and 7)
 
@@ -57,7 +56,7 @@ Every script here should run within a minute. There are two exceptions (see step
 5. 005_deriv_cohort_properties.R 
   - Figure 1a-g, Supplementary Figure 3
   - Note that Figures 1d, e, f cannot be plotted with provided data, code should be run line-by-line.
-  - In generating Figure 1g, the run time for generating each independent iteration of random forest will take 3-5 minutes. For 100 iterations this will take several hours. 
+  - In generating Figure 1g, the run time for generating each independent iteration of random forest will take 3-5 minutes. For 100 iterations this will take several hours on a local environment. 
   
 6. 006_deriv_outcomes.R
  - Figure 1h-l
@@ -66,7 +65,7 @@ Every script here should run within a minute. There are two exceptions (see step
 7. 007_partial_lab_clustering.R
  - Supplementary Figure 4
  - Note that this script cannot be run with provided data. Though the code and comments describe the analysis to evaluate the quality of clustering with partially available laboratory data 
- - The run time for this script will take ~2 hours. 
+ - The run time for this script will take ~2 hours on a local environment. 
  
 8. 008_cluster_assignment_validation.R
  - Extended Figure 4
@@ -94,7 +93,7 @@ Every script here should run within a minute. There are two exceptions (see step
 
 All required libraries are listed within each script. 
 
-The InflaMix model features are in the "model" directory. 
+The InflaMix model features will be in the "model" directory. 
 
 ## Data availability
 
