@@ -8,7 +8,7 @@ date: "2025-03-31"
 
 This github repository contains code for deriving InflaMix as described in https://www.nature.com/articles/s41591-025-03532-x 
 
-InflaMix (INFLAmmation MIXture Model) is a Gaussian mixture model trained on pre-infusion laboratory and cytokine data from patients with large B-cell lymphoma treated with CD19-CAR-T. It defines two clusters, the inflammatory and non-inflammatory clusters. The inflammatory cluster is enriched for patients with a serological signature that is consistent with systemic inflammation (e.g., elevated CRP, IL6, low albumin).
+InflaMix (INFLAmmation MIXture Model) is a Gaussian mixture model trained on pre-infusion laboratory and cytokine data from patients with large B-cell lymphoma treated with CD19-CAR-T. It defines two clusters, the inflammatory and non-inflammatory clusters. The inflammatory cluster is enriched for patients with a serological signature that is consistent with systemic inflammation (e.g., elevated CRP, elevated IL6, low albumin).
 
 The model can be applied to estimate the probability of cluster assignment even with several missing laboratory or cytokine values. Enrichment for the inflammatory signature reproducibly stratifies risk of treatment failure in multiple non-Hodgkin lymphoma cohorts and is predictive of CD19-CAR-T treatment failure in large B-cell lymphoma beyond standard biomarkers and risk factors. 
 
@@ -23,7 +23,7 @@ Legacy Link: https://sraj17.shinyapps.io/inflamix_app/
 
 For optimal results, users enter as many of the 14 labs as are available, giving precedence to the 6 laboratory measurements from the limited panel.
 
-## Set-up
+## Set-up for analyses included in the InflaMix paper
 
 1. Download this entire directory from GitHub. Open the "InflaMix.Rproj" file in a suitable IDE like R-Studio.
 
@@ -39,7 +39,11 @@ A description of the data inputs for this project and a description of their col
 
 Scripts should be run in the following order which contains code for the corresponding figures:
 
-### 0. Please place Dataset 1 (deriv_cohort_d0_labs_v2_dataset1.csv) into the data folder. This was provided as source data with the paper. 
+### Script Descriptions
+
+The following 
+
+0. Please place Dataset 1 (deriv_cohort_d0_labs_v2_dataset1.csv) into the data folder. This was provided as source data with the paper. 
 
 Every script here should run within a minute. There are two exceptions (see steps 5 and 7)
 
@@ -95,7 +99,7 @@ Every script here should run within a minute. There are two exceptions (see step
 
 All required libraries are listed within each script. 
 
-The InflaMix model features will be in the "model" directory. 
+The InflaMix model features and parameters will be in the "model" directory saved as an R data object. 
 
 ## Data availability
 
