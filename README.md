@@ -35,19 +35,19 @@ For optimal results, users enter as many of the 14 labs as are available, giving
 
 3. Follow the steps below.
 
-A description of the two data inputs for this project and a description of their column values is given in the comments at the beginning of 001_base_scaling.R. 
+A description of the data inputs for this project and a description of their column values is given in the comments at the beginning of 001_base_scaling.R. 
 
 Scripts should be run in the following order which contains code for the corresponding figures:
 
-### 0 . Please place Dataset 1 (deriv_cohort_d0_labs_v2_dataset1.csv) into the data folder. This was provided as source data with the paper. 
+### 0. Please place Dataset 1 (deriv_cohort_d0_labs_v2_dataset1.csv) into the data folder. This was provided as source data with the paper. 
 
 Every script here should run within a minute. There are two exceptions (see steps 5 and 7)
 
 1. 001_base_scaling.R 
- - Supplementary Figures 2 and 8
+ - Supplementary Figures 2 and 7
 
 2. 002_modelgen.R 
- - Extended Figure 3h and 3i, Supplementary Figure 9
+ - Extended Figure 3h and 3i, Supplementary Figure 8
   
 3. 003_icl_bic.R
  - Extended Figure 3a
@@ -82,15 +82,15 @@ Every script here should run within a minute. There are two exceptions (see step
  - Note that only Extended Figure 5a be plotted with provided data
 
 11. 011_prediction_benchmarking.R
- - Figure 3 and Supplementary Figure 5
+ - Figure 3 and Extended Figure 7
  - Note that this script cannot be run with provided data. 
  
  12. 012_cluster_transitions.R
- - Figure 5, Supplementary Figure 6, and Supplementary Figure 7
+ - Figure 5, Supplementary Figure 5, and Supplementary Figure 6
  - Note that this script cannot be run with provided data. 
  
  13. 100_tables.R
-  - Table 1, Supplementary Table 3
+  - Table 1, Extended Tables 1 and 2
   - Note that this script cannot be run with provided data. 
 
 All required libraries are listed within each script. 
@@ -105,5 +105,5 @@ Data requests for patient-related laboratory measurements or clinical outcomes w
  - Extended Figure 5a
  - Supplementary Figure 2
  - Supplementary Figure 3
+ - Supplementary Figure 7
  - Supplementary Figure 8
- - Supplementary Figure 9
